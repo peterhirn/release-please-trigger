@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.3](https://github.com/peterhirn/release-please-trigger/compare/v1.0.2...v1.0.3) (2024-09-25)
+
+
+### Miscellaneous Chores
+
+* not tags ([e23631b](https://github.com/peterhirn/release-please-trigger/commit/e23631bdaa9020f49155f713a5d0f5af9cfe62b3))
+
 ## [1.0.2](https://github.com/peterhirn/release-please-trigger/compare/v1.0.1...v1.0.2) (2024-09-25)
 
 

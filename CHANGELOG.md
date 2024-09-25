@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.5](https://github.com/peterhirn/release-please-trigger/compare/v1.0.4...v1.0.5) (2024-09-25)
+
+
+### Miscellaneous Chores
+
+* manual trigger ([58703a9](https://github.com/peterhirn/release-please-trigger/commit/58703a97824afc410b735fd2a94a82b8b7ec1d95))
+
 ## [1.0.4](https://github.com/peterhirn/release-please-trigger/compare/v1.0.3...v1.0.4) (2024-09-25)
 
 

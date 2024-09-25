@@ -1,0 +1,13 @@
+name: Check
+
+on:
+  push:
+    branches:
+      - "**"
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check
+        run: echo check

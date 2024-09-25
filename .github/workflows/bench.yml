@@ -1,0 +1,13 @@
+name: Benchmark
+
+on:
+  push:
+    tags:
+      - "**"
+
+jobs:
+  bench:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Bench
+        run: echo bench

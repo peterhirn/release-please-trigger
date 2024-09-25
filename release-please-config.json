@@ -16,11 +16,11 @@
     { "type": "infra", "section": "Infrastructure" },
     { "type": "release", "section": "Releases", "hidden": true }
   ],
+  "pull-request-title-pattern": "release: ${version}",
   "packages": {
     ".": {
       "release-type": "simple",
       "changelog-path": "CHANGELOG.md",
-      "pull-request-title-pattern": "release: ${version}",
       "include-component-in-tag": false,
       "bump-minor-pre-major": true,
       "bump-patch-for-minor-pre-major": false

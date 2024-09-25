@@ -3,7 +3,7 @@ name: Benchmark
 on:
   push:
     tags:
-      - "**"
+      - '**'
 
 jobs:
   bench:

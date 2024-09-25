@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.4](https://github.com/peterhirn/release-please-trigger/compare/v1.0.3...v1.0.4) (2024-09-25)
+
+
+### Miscellaneous Chores
+
+* if ([5ea0e2b](https://github.com/peterhirn/release-please-trigger/commit/5ea0e2b3cf7fc13c670aacf4c316d2030334da05))
+
 ## [1.0.3](https://github.com/peterhirn/release-please-trigger/compare/v1.0.2...v1.0.3) (2024-09-25)
 
 

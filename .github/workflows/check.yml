@@ -10,3 +10,12 @@ jobs:
     steps:
       - name: Check
         run: echo check
+
+      - name: Alpine
+        id: alpine
+        uses: docker://alpine:latest
+        with:
+          args: echo alpine
+
+      - name: Foo
+        run: echo '${{ toJson(steps.alpine) }}'

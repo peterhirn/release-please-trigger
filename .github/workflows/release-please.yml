@@ -27,9 +27,15 @@ jobs:
         run: echo foo > bar.txt
 
       - name: Generate artifact attestation
+        if: ${{ steps.release.outputs.release_created }}
+        id: attestation
         uses: actions/attest-build-provenance@v1
         with:
           subject-path: bar.txt
+
+      - name: Foo
+        if: ${{ steps.release.outputs.release_created }}
+        run: echo ${{ toJson(steps.attestation) }}
 
       - name: Upload Release Artifact
         if: ${{ steps.release.outputs.release_created }}

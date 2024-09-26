@@ -6,6 +6,8 @@ on:
       - main
 
 permissions:
+  id-token: write
+  attestations: write
   contents: write
   pull-requests: write
 
@@ -15,6 +17,10 @@ jobs:
     steps:
       - uses: googleapis/release-please-action@7987652d64b4581673a76e33ad5e98e3dd56832f # v4
         id: release
+
+      - name: Checkout
+        if: ${{ steps.release.outputs.release_created }}
+        uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4
 
       - name: Build
         if: ${{ steps.release.outputs.release_created }}

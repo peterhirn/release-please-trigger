@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.6](https://github.com/peterhirn/release-please-trigger/compare/v1.0.5...v1.0.6) (2024-09-26)
+
+
+### Miscellaneous Chores
+
+* artifact ([e744024](https://github.com/peterhirn/release-please-trigger/commit/e744024c0306262dc3edcd4fc198b7c8c3d994de))
+
 ## [1.0.5](https://github.com/peterhirn/release-please-trigger/compare/v1.0.4...v1.0.5) (2024-09-25)
 
 

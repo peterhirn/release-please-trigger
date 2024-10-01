@@ -8,8 +8,15 @@ jobs:
     if: ${{ !startsWith(github.event.head_commit.message, 'release:') }}
     runs-on: ubuntu-24.04
     steps:
-      - name: Check
-        run: echo check
+      - name: Checkout
+        uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4
+
+      - name: Playwright
+        uses: ./.github/actions/playwright
+        with:
+          run: |
+            echo hello
+            echo more lines
 
       - name: Alpine
         id: alpine

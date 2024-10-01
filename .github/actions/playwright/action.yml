@@ -3,7 +3,6 @@ name: playwright
 inputs:
   version:
     description: Playwright version
-    required: false
     default: v1.47.2-noble@sha256:f640d04686ef8fcca228955dc73f36b86ccd2228eda488fb2b32f3f037639f09
   run:
     description: Script to execute

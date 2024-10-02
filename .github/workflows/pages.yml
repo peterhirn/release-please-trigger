@@ -5,7 +5,8 @@ on:
 
 jobs:
   pages:
-    if: ${{ !startsWith(github.event.head_commit.message, 'release:') }}
+    #if: ${{ !startsWith(github.event.head_commit.message, 'release:') }}
+    if: false
     runs-on: ubuntu-24.04
     permissions:
       pages: write

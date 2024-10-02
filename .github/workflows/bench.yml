@@ -6,7 +6,8 @@ on:
 
 jobs:
   bench:
-    if: ${{ github.event_name == 'workflow_dispatch' || startsWith(github.event.head_commit.message, 'release:') }}
+    #if: ${{ github.event_name == 'workflow_dispatch' || startsWith(github.event.head_commit.message, 'release:') }}
+    if: false
     runs-on: ubuntu-latest
     steps:
       - name: Bench

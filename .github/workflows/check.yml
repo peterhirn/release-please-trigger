@@ -18,6 +18,19 @@ jobs:
       #      echo hello
       #      echo more lines
 
+      - name: Set Env
+        run: |
+          echo "FOO=bar" >> ${GITHUB_ENV}
+          echo "ASDFASDF=blue" >> ${GITHUB_ENV}
+
+      - name: Env
+        run: |
+          ENV="$(echo '${{ toJson(env) }}' | jq -r 'keys | map("-e \(.)") | join(" ")')"
+          echo "ENV: ${ENV}"
+
+      - name: Foo
+        run: echo ${{ format('-e {0}', env) }}
+
       - name: Alpine
         id: alpine
         uses: docker://alpine:latest

@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.0.9](https://github.com/peterhirn/release-please-trigger/compare/v1.0.8...v1.0.9) (2024-10-02)
+
+
+### Miscellaneous Chores
+
+* dump ([ab909b9](https://github.com/peterhirn/release-please-trigger/commit/ab909b90de0b5af494234db996c67467252107a8))
+* even more ([e728cfa](https://github.com/peterhirn/release-please-trigger/commit/e728cfa1b95ed87f3b8fe12875a8664bf4416b49))
+* map env ([0248c40](https://github.com/peterhirn/release-please-trigger/commit/0248c4013390fa26a82e997b5946c5a0fa367840))
+* no dump ([0483d69](https://github.com/peterhirn/release-please-trigger/commit/0483d691273eeef14d06592fc5e963d458fe2642))
+* pages ([0aecf96](https://github.com/peterhirn/release-please-trigger/commit/0aecf966b284af7353d2501a2ab7c610b6458fb8))
+* test ([2c77ffc](https://github.com/peterhirn/release-please-trigger/commit/2c77ffc6852321f4993316e80fc2b54c43d3f742))
+* testing playwright action ([88c4444](https://github.com/peterhirn/release-please-trigger/commit/88c444447500eeb8d47459cddfa45e100bd42d70))
+
 ## [1.0.8](https://github.com/peterhirn/release-please-trigger/compare/v1.0.7...v1.0.8) (2024-09-26)
 
 

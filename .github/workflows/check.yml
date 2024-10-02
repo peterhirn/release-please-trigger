@@ -18,6 +18,12 @@ jobs:
       #      echo hello
       #      echo more lines
 
+      - name: Env
+        run: echo ${{ toJson(env) }}
+
+      - name: Foo
+        run: echo ${{ format('-e {0}', env) }}
+
       - name: Alpine
         id: alpine
         uses: docker://alpine:latest

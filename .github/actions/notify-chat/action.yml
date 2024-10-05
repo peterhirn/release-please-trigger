@@ -1,0 +1,103 @@
+name: notify-chat
+
+inputs:
+  webhook:
+    required: true
+  title:
+    required: true
+  subtitle:
+    default: ${{ github.event.head_commit.message }}
+  version:
+    required: true
+  url:
+    required: true
+  commit_sha:
+    default: ${{ github.sha }}
+  run_id:
+    default: ${{ github.run_id }}
+
+runs:
+  using: composite
+  steps:
+    - name: Notify chat
+      shell: bash
+      run: |
+        command -v curl >/dev/null 2>&1 || { echo >&2 "curl not installed"; exit 1; }
+
+        curl -L --no-progress-meter --fail-with-body \
+          --header "Content-Type: application/json" \
+          ${{ inputs.webhook }} --data "${CHAT_MESSAGE}"
+      env:
+        CHAT_MESSAGE: |
+          {
+            "cardsV2": [
+              {
+                "card": {
+                  "header": {
+                    "title": "${{ inputs.title }}",
+                    "subtitle": "${{ inputs.subtitle }}"
+                  },
+                  "sections": [
+                    {
+                      "widgets": [
+                        {
+                          "decoratedText": {
+                            "startIcon": {
+                              "knownIcon": "STAR"
+                            },
+                            "text": "v${{ inputs.version }}"
+                          }
+                        },
+                        {
+                          "decoratedText": {
+                            "startIcon": {
+                              "knownIcon": "BOOKMARK"
+                            },
+                            "text": "${{ inputs.commit_sha }}"
+                          }
+                        },
+                        {
+                          "decoratedText": {
+                            "startIcon": {
+                              "knownIcon": "PERSON"
+                            },
+                            "text": "${{ github.actor }}"
+                          }
+                        },
+                        {
+                          "buttonList": {
+                            "buttons": [
+                              {
+                                "text": "Open",
+                                "onClick": {
+                                  "openLink": {
+                                    "url": "${{ inputs.url }}"
+                                  }
+                                }
+                              },
+                              {
+                                "text": "Commit",
+                                "onClick": {
+                                  "openLink": {
+                                    "url": "${{ github.server_url }}/${{ github.repository }}/commit/${{ inputs.commit_sha }}"
+                                  }
+                                }
+                              },
+                              {
+                                "text": "Workflow",
+                                "onClick": {
+                                  "openLink": {
+                                    "url": "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ inputs.run_id }}"
+                                  }
+                                }
+                              },
+                            ]
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            ]
+          }

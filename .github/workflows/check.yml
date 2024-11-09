@@ -45,8 +45,12 @@ jobs:
           echo "$ImageOS: $ImageVersion"
           lsb_release -a
           cat /etc/os-release
+          RUNNER_OS_VERSION_ID=$(grep "^VERSION_ID=" /etc/os-release | cut -d'=' -f2 | tr -d '"')
+          echo "${RUNNER_OS_VERSION_ID}"
           echo "$ENV"
-          set
+          #set
+          RUNNER_SBOM_URL="https://github.com/actions/runner-images/releases/download/${ImageOS}%2F${ImageVersion}/sbom.ubuntu-${RUNNER_OS_VERSION_ID}.json.zip"
+          echo ${RUNNER_SBOM_URL}
 
       #- name: Dump GitHub context
       #  env:

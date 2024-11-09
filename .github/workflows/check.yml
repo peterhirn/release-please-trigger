@@ -43,6 +43,8 @@ jobs:
         run: |
           #https://github.com/actions/runner-images/releases/download/ubuntu24%2F20241103.1/sbom.ubuntu-24.04.json.zip
           echo "$ImageOS: $ImageVersion"
+          lsb_release -a
+          cat /etc/os-release
           echo "$ENV"
           set
 

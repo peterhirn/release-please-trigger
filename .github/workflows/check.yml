@@ -18,24 +18,33 @@ jobs:
       #      echo hello
       #      echo more lines
 
-      - name: Set Env
+      #- name: Set Env
+      #  run: |
+      #    echo "FOO=bar" >> ${GITHUB_ENV}
+      #    echo "ASDFASDF=blue" >> ${GITHUB_ENV}
+
+      #- name: Env
+      #  run: |
+      #    ENV="$(echo '${{ toJson(env) }}' | jq -r 'keys | map("-e \(.)") | join(" ")')"
+      #    echo "ENV: ${ENV}"
+
+      #- name: Foo
+      #  run: echo ${{ format('-e {0}', env) }}
+
+      #- name: Alpine
+      #  id: alpine
+      #  uses: docker://alpine:latest
+      #  with:
+      #    args: echo alpine
+
+      - name: Dump GitHub env
+        env:
+          ENV: ${{ toJson(env) }}
         run: |
-          echo "FOO=bar" >> ${GITHUB_ENV}
-          echo "ASDFASDF=blue" >> ${GITHUB_ENV}
-
-      - name: Env
-        run: |
-          ENV="$(echo '${{ toJson(env) }}' | jq -r 'keys | map("-e \(.)") | join(" ")')"
-          echo "ENV: ${ENV}"
-
-      - name: Foo
-        run: echo ${{ format('-e {0}', env) }}
-
-      - name: Alpine
-        id: alpine
-        uses: docker://alpine:latest
-        with:
-          args: echo alpine
+          #https://github.com/actions/runner-images/releases/download/ubuntu24%2F20241103.1/sbom.ubuntu-24.04.json.zip
+          echo "$ImageOS: $ImageVersion"
+          echo "$ENV"
+          set
 
       #- name: Dump GitHub context
       #  env:
